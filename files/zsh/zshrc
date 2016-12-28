@@ -20,6 +20,7 @@ alias .....="cd ../../../.."
 alias ll="ls -lh"
 alias la="ls -ha"
 alias lla="ls -lha"
+alias cls="clear"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias g="git add -A"
@@ -28,7 +29,7 @@ alias ggg="git add -A && git commit && git push"
 alias ipy="ipython"
 alias bpy="bpython"
 alias py="python"
-alias tree="tree -C"
+# alias tree="tree -C"
 # alias dkr=docker
 # alias b2d=boot2docker-cli
 # alias vbm=VBoxManage
