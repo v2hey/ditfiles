@@ -2,6 +2,18 @@
 .DS_Store 
 Desktop.ini 
 
+# Vim swap files
+.*.sw?
+
+# Sass cache
+.sass-cache
+
+# # OS generated files #
+# ######################
+.DS_Store*
+ehthumbs.db
+Icon?
+
 # Thumbnail cache files 
 ._* 
 Thumbs.db 
@@ -12,6 +24,7 @@ Thumbs.db
 
 # Compiled Python files 
 *.pyc
+*.pyo
 
 # Compiled C++ files 
 *.out
@@ -20,3 +33,33 @@ Thumbs.db
 venv 
 node_modules 
 .sass-cache
+
+# Subversion
+.svn
+
+# # Packages #
+# ############
+# it's better to unpack these files and commit the raw source
+# git has its own built-in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Compiled source #
+# ###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# # Logs and databases #
+# ######################
+*.log
+*.sqlite
