@@ -54,7 +54,7 @@ alias wkon="workon"
 alias mkvte='mkvirtualenv'                                                                                                                   
 alias deact='deactivate'                                                                                                                     
 alias rmvte='rmvirtualenv'
-
+alias lsvte="lsvirtualenv"
 alias tree="tree -NC" 
 # alias dkr=docker
 # alias b2d=boot2docker-cli
