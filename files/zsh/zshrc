@@ -13,9 +13,19 @@ plugins=(git z extract colorize history-substring-search zsh-syntax-highlighting
 
 source $ZSH/oh-my-zsh.sh
 
+# python virtualenvs
+# pip3 install virtualenv virtualenvwrapper
+# mkdir ~/.virtualenvs
+# virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3 
+export WORKON_HOME=~/.virtualenvs 
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh 
+[ -f /etc/bash_completion.d/virtualenvwrapper ] && source /etc/bash_completion.d/virtualenvwrapper 
+export PIP_VIRTUALENV_BASE=$WORKON_HOME 
+export PIP_RESPECT_VIRTUALENV=true
 
 
-
+# alias
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -29,13 +39,21 @@ alias rm="rm --help"
 # alias rm="rm -i"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
+
 alias g="git add -A"
 alias gg="git add -A && git commit"
 alias ggg="git add -A && git commit && git push"
+
 alias ipy="ipython"
 alias bpy="bpython"
 alias py="python"
 alias py3="python3"
+
+alias vte='virtualenv'                                                                                                                       
+alias mkvte='mkvirtualenv'                                                                                                                   
+alias deact='deactivate'                                                                                                                     
+alias rmvte='rmvirtualenv'
+
 alias tree="tree -NC" 
 # alias dkr=docker
 # alias b2d=boot2docker-cli
