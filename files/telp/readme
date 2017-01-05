@@ -1,0 +1,2 @@
+# ln -s ~/.dotfiles/files/telp/telp /usr/local/bin/telp
+# ln -s ~/.dotfiles/files/telp/telp.json ~/.telp.json

@@ -1,0 +1,5 @@
+{
+  "find": [
+    "find . -name '*.txt'"
+  ]
+}
