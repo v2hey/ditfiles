@@ -1,4 +1,6 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python
+# coding: utf-8
+
 
 import sys
 import os
@@ -19,8 +21,8 @@ def init():
         with open(db_path, 'w+') as f:
             print('initialize successfully')
         return
-    with open(db_path, 'r') as f:
-        content = f.read()
+    with open(db_path, 'rb') as f:
+        content = f.read().decode('utf-8')
         try:
             model_dict.update(json.loads(content))
         except:
@@ -38,24 +40,27 @@ def usage():
 
 
 def print_models():
-    spoon = sys.argv[1]
+    spoon = sys.argv[1].decode('utf-8')
     models = model_dict.get(spoon)
     if not models:
         print("not found")
     else:
         for i, m in enumerate(models):
-            formatted_model = "{:<5}{}".format(i, m)
+            formatted_model = "{:<5}{}".format(i, m.encode('utf-8'))
             print(formatted_model)
 
 
 def save(model_dict):
-    with open(db_path, 'w') as f:
-        f.write(json.dumps(model_dict, indent=2))
+    with open(db_path, 'wb') as f:
+        content = json.dumps(model_dict, indent=2, ensure_ascii=False).encode('utf-8')
+        f.write(content)
 
 
 def add_model():
-    spoon = sys.argv[1]
-    model_dict[spoon] = model_dict.get(spoon, []) + sys.argv[2:]
+    spoon = sys.argv[1].decode('utf-8')
+    model_list = []
+    model_list.append(sys.argv[2].decode('utf-8'))
+    model_dict[spoon] = model_dict.get(spoon, []) + model_list
     save(model_dict)
     print('model added')
 
@@ -83,3 +88,4 @@ def main():
 if __name__ == '__main__':
     init()
     main()
+

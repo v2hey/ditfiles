@@ -1,4 +1,5 @@
-2016-12-24-125417   无 shell 环境
-2016-12-29-202838   包含 shell 的基本开发环境
-2017-01-04-210204   pycharm 和 virtualenvs
-2017-01-05-215752   atom 和 telp、 chest
+2016-12-24-125417   without shell 
+2016-12-29-202838   add shell to the basic dev environment
+2017-01-04-210204   add pycharm 、 virtualenvs
+2017-01-05-215752   add atom 、 telp、 chest
+2017-01-07-163547   add snap 、totalspaces、 perfect shortcuts
