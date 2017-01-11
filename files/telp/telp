@@ -50,7 +50,8 @@ def print_models():
 
 def save(model_dict):
     with open(db_path, 'w') as f:
-        f.write(json.dumps(model_dict, indent=2))
+        # ensure_ascii = False 可以保证中文不被转码, 方便查看
+        f.write(json.dumps(model_dict, indent=2, ensure_ascii=False))
 
 
 def add_model():
