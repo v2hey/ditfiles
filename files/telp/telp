@@ -29,23 +29,40 @@ def init():
 
 def usage():
     print('telp usage:\n')
-    print('$telp command-keyword "command model"')
-    print('   save the command model to the telp')
+
+    print('$telp list')
+    print('   list all commands\n')
+
     print('$telp command-keyword')
-    print('   show command models related to the command-keyword')
+    print('   show command models related to the command-keyword\n')
+
+    print('$telp command-keyword "command model"')
+    print('   save the command model to the telp\n')
+
     print('$telp command-keyword *(del) index')
-    print('   delete the index command models related to the command-keyword')
+    print('   delete the index command models related to the command-keyword\n')
 
 
 def print_models():
     spoon = sys.argv[1]
-    models = model_dict.get(spoon)
-    if not models:
-        print("not found")
+    if spoon == 'list':
+        if len(model_dict.keys()) == 0:
+            print("no commands")
+        else:
+            for k, vs in model_dict.items():
+                print(k)
+                for i, m in enumerate(vs):
+                    formatted_model = "{:<5}{}".format(i, m)
+                    print(formatted_model)
+                print('\n')
     else:
-        for i, m in enumerate(models):
-            formatted_model = "{:<5}{}".format(i, m)
-            print(formatted_model)
+        models = model_dict.get(spoon)
+        if not models:
+            print("not found")
+        else:
+            for i, m in enumerate(models):
+                formatted_model = "{:<5}{}".format(i, m)
+                print(formatted_model)
 
 
 def save(model_dict):

@@ -56,6 +56,18 @@ alias deact='deactivate'
 alias rmvte='rmvirtualenv'
 alias lsvte="lsvirtualenv"
 alias tree="tree -NC" 
+alias con='ssh -L 3331:127.0.0.1:3306 root@119.27.166.86 -NPCf && ssh -L 3332:127.0.0.1:33060 root@106.15.224.170 -NPCf && ssh -L 3333:127.0.0.1:27017 root@119.27.166.86 -NPCf && ssh -L 3334:127.0.0.1:18081 root@106.15.224.170 -NPCf'
+alias sql='ssh -L 3331:127.0.0.1:3306 root@119.27.166.86 -NPCf'
+alias mongot='ssh -L 3333:127.0.0.1:27017 root@119.27.166.86 -NPCf'
+alias sqlp='ssh -L 3332:127.0.0.1:33060 root@106.15.224.170 -NPCf'
+alias mongop='ssh -L 3334:127.0.0.1:18081 root@106.15.224.170 -NPCf'
+alias vs='ssh root@119.27.166.86'
+alias vsp='ssh root@106.15.224.170'
+alias runl='python manage.py runserver --configuration=Local'
+alias migrationl='python manage.py makemigrations --configuration=Local'
+alias migratel='python manage.py migrate --configuration=Local'
+alias run='python manage.py runserver'
+alias runp='python manage.py runserver --configuration=Pro'
 # alias dkr=docker
 # alias b2d=boot2docker-cli
 # alias vbm=VBoxManage
