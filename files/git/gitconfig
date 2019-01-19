@@ -7,10 +7,10 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = v2hey
+	name = evot
 	email = neobeta@outlook.com
 [color]
-	ui = auto
+	ui = true
 [alias]
 	co = checkout
 	st = status

@@ -3,8 +3,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/mysql/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/zhanghe/.oh-my-zsh
-
 ZSH_THEME="ys"
+
+# set the locale for mosh
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # #### use the following command to install `zsh-syntax-highlighting` plugin ####
 
@@ -24,6 +27,9 @@ export WORKON_HOME=~/.virtualenvs
 export PIP_VIRTUALENV_BASE=$WORKON_HOME 
 export PIP_RESPECT_VIRTUALENV=true
 
+# pyenv
+# export PYENV_ROOT=/usr/local/var/pyenv
+# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # alias
 alias ..="cd .."
@@ -73,3 +79,8 @@ alias runp='python manage.py runserver --configuration=Pro'
 # alias vbm=VBoxManage
 # alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 # alias ssh="TERM=xterm-256color ssh"
+
+# SS
+alias setproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
+alias unsetproxy='unset ALL_PROXY'
+
