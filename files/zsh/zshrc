@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/mysql/bin
-
+export PATH=$HOME/.emacs.d/bin:$HOME/bin:/usr/local/bin:$PATH:/usr/local/mysql/bin
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/zhanghe/.oh-my-zsh
 ZSH_THEME="ys"
@@ -16,6 +15,9 @@ plugins=(git z extract colorize history-substring-search zsh-syntax-highlighting
 
 source $ZSH/oh-my-zsh.sh
 
+# install autosuggestion with homebrew, so source it here, not in plugins
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # python virtualenvs
 # pip3 install virtualenv virtualenvwrapper
 # mkdir ~/.virtualenvs
@@ -27,10 +29,6 @@ export WORKON_HOME=~/.virtualenvs
 export PIP_VIRTUALENV_BASE=$WORKON_HOME 
 export PIP_RESPECT_VIRTUALENV=true
 
-# pyenv
-# export PYENV_ROOT=/usr/local/var/pyenv
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 # alias
 alias ..="cd .."
 alias ...="cd ../.."
@@ -41,7 +39,7 @@ alias ll="ls -lh"
 alias la="ls -ha"
 alias lla="ls -lha"
 alias cls="clear"
-alias rm="rm --help"
+# alias rm="rm --help"
 # alias rm="rm -i"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
@@ -62,25 +60,43 @@ alias deact='deactivate'
 alias rmvte='rmvirtualenv'
 alias lsvte="lsvirtualenv"
 alias tree="tree -NC" 
-alias con='ssh -L 3331:127.0.0.1:3306 root@119.27.166.86 -NPCf && ssh -L 3332:127.0.0.1:33060 root@106.15.224.170 -NPCf && ssh -L 3333:127.0.0.1:27017 root@119.27.166.86 -NPCf && ssh -L 3334:127.0.0.1:18081 root@106.15.224.170 -NPCf'
-alias sql='ssh -L 3331:127.0.0.1:3306 root@119.27.166.86 -NPCf'
-alias mongot='ssh -L 3333:127.0.0.1:27017 root@119.27.166.86 -NPCf'
-alias sqlp='ssh -L 3332:127.0.0.1:33060 root@106.15.224.170 -NPCf'
-alias mongop='ssh -L 3334:127.0.0.1:18081 root@106.15.224.170 -NPCf'
-alias vs='ssh root@119.27.166.86'
-alias vsp='ssh root@106.15.224.170'
-alias runl='python manage.py runserver --configuration=Local'
-alias migrationl='python manage.py makemigrations --configuration=Local'
-alias migratel='python manage.py migrate --configuration=Local'
-alias run='python manage.py runserver'
-alias runp='python manage.py runserver --configuration=Pro'
-# alias dkr=docker
+alias ssh="TERM=xterm-256color ssh"
+#alias emacs="TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias dkr=docker
 # alias b2d=boot2docker-cli
 # alias vbm=VBoxManage
 # alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
-# alias ssh="TERM=xterm-256color ssh"
+
+# hs 服务配置
+alias mongot='ssh -L 3333:127.0.0.1:18081 root@106.15.75.87 -NPCf'
+alias redist='ssh -L 3335:127.0.0.1:16379 root@106.15.75.87 -NPCf'
+alias sqlt='ssh -L 3337:rm-uf63e63ezxcids405.mysql.rds.aliyuncs.com:3306 root@106.15.75.87 -NPCf'
+alias sqltp='ssh -L 3339:rm-uf63e63ezxcids405.mysql.rds.aliyuncs.com:3306 root@106.15.75.87 -NPCf'
+
+alias mongop='ssh -L 3334:127.0.0.1:18081 root@106.15.224.170 -NPCf'
+alias redisp='ssh -L 3336:127.0.0.1:16379 root@106.15.224.170 -NPCf'
+alias sqlp='ssh -L 3338:rm-uf63e63ezxcids405.mysql.rds.aliyuncs.com:3306 root@106.15.224.170 -NPCf'
+
+alias con='ssh -L 3333:127.0.0.1:18081 root@106.15.75.87 -NPCf && ssh -L 3334:127.0.0.1:18081 root@106.15.224.170 -NPCf && ssh -L 3335:127.0.0.1:16379 root@106.15.75.87 -NPCf && ssh -L 3336:127.0.0.1:16379 root@106.15.224.170 -NPCf && ssh -L 3337:rm-uf63e63ezxcids405.mysql.rds.aliyuncs.com:3306 root@106.15.75.87 -NPCf && ssh -L 3338:rm-uf63e63ezxcids405.mysql.rds.aliyuncs.com:3306 root@106.15.224.170 -NPCf && ssh -L 3339:rm-uf63e63ezxcids405.mysql.rds.aliyuncs.com:3306 root@106.15.75.87 -NPCf'
+alias killcon='kill -9 $(lsof -i:3337,3338,3333,3334,3335,3336 -t)'
+
+alias vs='ssh root@106.15.75.87'
+alias vsp='ssh root@106.15.224.170'
+
+alias shell='python manage.py shell_plus'
+alias shellp='python manage.py shell_plus --configuration=Pro'
+alias run='python manage.py runserver'
+alias runl='python manage.py runserver --configuration=Local'
+alias runp='python manage.py runserver --configuration=Pro'
+alias migrationl='python manage.py makemigrations --configuration=Local'
+alias migratel='python manage.py migrate --configuration=Local'
+
+# tencent vps 配置
+alias vsme='ssh ubuntu@129.226.118.41'
+
 
 # SS
 alias setproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
 
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
