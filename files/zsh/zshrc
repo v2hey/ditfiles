@@ -100,3 +100,10 @@ alias setproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
+
+# Go
+# GO PATH CONFIG
+export GOPATH=/Users/zhanghe/Go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
