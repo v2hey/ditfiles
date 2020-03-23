@@ -107,3 +107,6 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bott
 export GOPATH=/Users/zhanghe/Go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+
+# pypi
+alias pypi-tsinghua='https://pypi.tuna.tsinghua.edu.cn/simple'
